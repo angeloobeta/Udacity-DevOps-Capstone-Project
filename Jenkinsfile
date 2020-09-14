@@ -31,10 +31,13 @@ pipeline {
             }
         }
     }
+
         stage('Security Scan') {
-            steps { 
-                aquaMicroscanner imageName: 'node:12.13.1-stretch-slim', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-            }
+              steps { 
+                 aquaMicroscanner imageName: 'alpine:3.7', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+              }
+         }     
+
 
          stage('Build Docker Image') {
               steps {
@@ -72,6 +75,4 @@ pipeline {
               }
             }
         }
-    }
-
 }
