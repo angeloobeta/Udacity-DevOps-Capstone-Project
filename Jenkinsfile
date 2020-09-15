@@ -28,8 +28,8 @@ pipeline {
          }
 
          stage('Deploying') {
-             echo 'Deploying to AWS...'
               steps{
+                  echo 'Deploying to AWS...'
                   withAWS(credentials:"capstone-project-user", region:"af-south-1") {
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster"
                       sh "kubectl get svc"
