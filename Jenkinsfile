@@ -32,13 +32,6 @@ pipeline {
         }
     }
 
-        stage('Security Scan') {
-              steps { 
-                 aquaMicroscanner imageName: 'alpine:3.7', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-              }
-         }     
-
-
          stage('Build Docker Image') {
               steps {
                   sh 'docker build -t capstone-project-cloud-devops .'
