@@ -29,8 +29,8 @@ pipeline {
 
          stage('Deploying') {
               steps{
-                  echo 'Deploying to AWS...'
                   withAWS(credentials:"capstone-project-user", region:"af-south-1") {
+                      echo 'Deploying to AWS...'
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster"
                       sh "kubectl get svc"
                       sh "kubectl set image deployments/django-capstone-project django-capstone-project=angeloobeta/django-capstone-project:latest"
