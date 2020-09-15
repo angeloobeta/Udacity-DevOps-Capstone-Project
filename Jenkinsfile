@@ -26,6 +26,7 @@ pipeline {
                   }
               }
          }
+         
          stage('Deploying') {
              echo 'Deploying to AWS...'
               steps{
