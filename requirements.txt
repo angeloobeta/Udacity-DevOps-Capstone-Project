@@ -4,9 +4,9 @@ gunicorn==20.0.4
 # 0e1ff1f3d05f40e3a921551a83230182
 
 
-sudo apt install tidy
-setup AquaMicroScanner
-sudo apt install docker.io
-sudo usermod -aG docker jenkins
-sudo systemctl restart jenkins
-setup cloudbees
+# sudo apt install tidy
+# setup AquaMicroScanner
+# sudo apt install docker.io
+# sudo usermod -aG docker jenkins
+# sudo systemctl restart jenkins
+# setup cloudbees
