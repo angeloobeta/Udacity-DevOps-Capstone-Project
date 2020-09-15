@@ -17,3 +17,6 @@ stage('Lint Dockerfile') {
             }
         }
     }
+
+
+credentials: 'aws', region: 'af-south-1'
