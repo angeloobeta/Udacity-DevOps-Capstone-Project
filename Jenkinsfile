@@ -30,7 +30,7 @@ pipeline {
               steps{
                   echo 'Deploying to AWS...'
 
-                  withAWS([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: "AWS_ACCESS_KEY_ID", credentialsId: "capstone-project-user', secretKeyVariable: "AWS_SECRET_ACESS_KEY_ID"]]) {
+                  withAWS(region:"af-south-1") {
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster"
                       sh "kubectl get svc"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:988212813982:cluster/capstonecluster"

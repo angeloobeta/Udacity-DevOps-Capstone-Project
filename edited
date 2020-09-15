@@ -20,3 +20,6 @@ stage('Lint Dockerfile') {
 
 
 credentials: 'aws', region: 'af-south-1'
+
+withAWS([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: "AWS_ACCESS_KEY_ID", credentialsId: "capstone-project-user', secretKeyVariable: "AWS_SECRET_ACESS_KEY_ID"]]) {
+                    
