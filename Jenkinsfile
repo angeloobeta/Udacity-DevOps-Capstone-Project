@@ -34,7 +34,7 @@ pipeline {
                       sh "eksctl create cluster --name  capstonecluster --region af-south-1"
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster"
                       sh "kubectl get svc"
-                      sh "kubectl set image deployments/django-capstone-project django-capstone-project=angeloobeta/django-capstone-project:latest"
+                      sh "kubectl config use-context arn:aws:eks:af-south-1:761971665763:cluster/capstonecluster"
                       sh "kubectl apply -f deployment/deployment.yml"
                       sh "kubectl get nodes"
                       sh "kubectl deployment"

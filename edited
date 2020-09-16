@@ -77,3 +77,6 @@ pipeline {
             }
         }
 }
+
+
+sh "kubectl set image deployments/django-capstone-project django-capstone-project=angeloobeta/django-capstone-project:latest"
