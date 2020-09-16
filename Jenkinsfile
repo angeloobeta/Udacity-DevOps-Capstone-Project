@@ -31,7 +31,7 @@ pipeline {
               steps{
                   echo 'Deploying to AWS...'
                   withAWS(credentials:"capstone-project-user", region:"af-south-1") {
-                      sh "eksctl create cluster --name  capstonecluster --region af-south-1"
+                      // sh "eksctl create cluster --name  capstonecluster --region af-south-1"
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster"
                       sh "kubectl get svc"
                       sh "kubectl config use-context arn:aws:eks:af-south-1:761971665763:cluster/capstonecluster"
