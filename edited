@@ -42,3 +42,11 @@
                   }
               }
          }
+
+
+
+
+
+         //sh "eksctl create cluster --name capstonecluster --version 1.17 --nodegroup-name capstone-standard-workers --node-type t2.medium --nodes 2 --nodes-min 1 --nodes-max 3 --node-ami auto --region af-south-1"
+         //sh "aws eks --region af-south-1 update-kubeconfig --name  capstonecluster"
+     
