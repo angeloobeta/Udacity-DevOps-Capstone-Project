@@ -62,12 +62,6 @@ pipeline {
                   }
               }
         }
-        stage("Checkout Rollout") {
-              steps{
-                    echo 'Checking Rollout...'
-                    sh "kubectl rollout status deployments/django-capstone-project"
-              }
-        }
         stage("Cleaning up") {
               steps{
                     echo 'Cleaning up...'
