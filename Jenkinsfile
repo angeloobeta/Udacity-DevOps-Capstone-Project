@@ -52,13 +52,12 @@ pipeline {
                   withAWS(credentials:"capstone-project-user", region:"af-south-1") {
                       sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster" 
                       sh "kubectl config use-context arn:aws:eks:af-south-1:761971665763:cluster/capstonecluster"
-                      sh "kubectl create deployment django-capstone-project --image=angeloobeta/django-capstone-project"
                       sh "kubectl set image deployments/django-capstone-project django-capstone-project=angeloobeta/django-capstone-project"
                       sh "kubectl apply -f deployment/deployment.yml"
                       sh "kubectl get nodes"
-                      sh "kubectl deployment"
                       sh "kubectl get svc"
                       sh "kubectl get pod -o wide"
+                      sh "kubectl get deployment"
                       sh "kubectl get service/django-capstone-project"
                   }
               }
