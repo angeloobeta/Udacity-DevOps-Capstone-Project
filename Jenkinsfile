@@ -62,14 +62,17 @@ pipeline {
                   }
               }
         }
-
+        stage("Checkout Rollout") {
+              steps{
+                    echo 'Checking Rollout...'
+                    sh "kubectl rollout status deployments/django-capstone-project"
+              }
+        }
         stage("Cleaning up") {
               steps{
                     echo 'Cleaning up...'
-                    sh "docker system prune -y"
+                    //sh "docker system prune -f"
               }
             }
         }
 }
-
-eksctl create cluster --name capstonecluster --region
