@@ -50,7 +50,7 @@ pipeline {
               steps{
                   echo 'Deploying to AWS...'
                   withAWS(credentials:"capstone-project-user", region:"af-south-1") {
-                      sh "aws eks --region ap-south-1 update-kubeconfig --name capstonecluster"
+                      sh "aws eks --region af-south-1 update-kubeconfig --name capstonecluster" 
                       sh "kubectl config use-context arn:aws:eks:af-south-1:761971665763:cluster/capstonecluster"
                       sh "kubectl set image deployments/django-capstone-project django-capstone-project=angeloobeta/django-capstone-project:latest"
                       sh "kubectl apply -f deployment/deployment.yml"
